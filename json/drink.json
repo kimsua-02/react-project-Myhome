@@ -12,7 +12,7 @@
     },
     {
        "menuCode":2,
-       "menuName":"우럭스무디",
+       "menuName":"할메가미숫커피",
        "menuPrice":5000,
        "categoryName":"커피",
        "isOrderable":true,
@@ -23,7 +23,7 @@
     },
     {
        "menuCode":3,
-       "menuName":"생갈치쉐이크",
+       "menuName":"귤톡톡릴렉싱티플레저",
        "menuPrice":6000,
        "categoryName":"티",
        "isOrderable":true,
@@ -34,7 +34,7 @@
     },
     {
        "menuCode":4,
-       "menuName":"갈릭미역파르페",
+       "menuName":"왕메가아이스티",
        "menuPrice":7000,
        "categoryName":"티",
        "isOrderable":true,
@@ -45,7 +45,7 @@
     },
     {
        "menuCode":5,
-       "menuName":"앙버터김치찜",
+       "menuName":"레드오렌지자몽주스",
        "menuPrice":13000,
        "categoryName":"에이드&주스",
        "isOrderable":true,
@@ -56,7 +56,7 @@
     },
     {
        "menuCode":6,
-       "menuName":"생마늘샐러드",
+       "menuName":"샤인머스켓그린주스",
        "menuPrice":12000,
        "categoryName":"에이드&주스",
        "isOrderable":true,
@@ -67,7 +67,7 @@
     },
     {
        "menuCode":7,
-       "menuName":"민트미역국",
+       "menuName":"밤밤찰떡프라페",
        "menuPrice":15000,
        "categoryName":"스무디&프라페",
        "isOrderable":true,
@@ -78,7 +78,7 @@
     },
     {
        "menuCode":8,
-       "menuName":"한우딸기국밥",
+       "menuName":"귤톡톡젤리스무디",
        "menuPrice":20000,
        "categoryName":"스무디&프라페",
        "isOrderable":true,
@@ -89,7 +89,7 @@
     },
     {
        "menuCode":9,
-       "menuName":"홍어마카롱",
+       "menuName":"디카페인에스프레소",
        "menuPrice":9000,
        "categoryName":"디카페인",
        "isOrderable":true,
@@ -100,7 +100,7 @@
     },
     {
        "menuCode":10,
-       "menuName":"코다리마늘빵",
+       "menuName":"디카페인아메리카노",
        "menuPrice":7000,
        "categoryName":"디카페인",
        "isOrderable":true,
@@ -111,7 +111,7 @@
     },
     {
        "menuCode":11,
-       "menuName":"정어리빙수",
+       "menuName":"왕메가초코",
        "menuPrice":10000,
        "categoryName":"음료",
        "isOrderable":true,
@@ -122,7 +122,7 @@
     },
     {
        "menuCode":12,
-       "menuName":"날치알스크류바",
+       "menuName":"딸기라떼",
        "menuPrice":2000,
        "categoryName":"음료",
        "isOrderable":true,
@@ -133,7 +133,7 @@
     },
     {
        "menuCode":13,
-       "menuName":"직화구이젤라또",
+       "menuName":"지구멜론스무디",
        "menuPrice":8000,
        "categoryName":"신상품",
        "isOrderable":true,
