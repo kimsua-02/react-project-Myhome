@@ -7,7 +7,7 @@
        "isOrderable":true,
        "detail": {
            "description": "갓 담근 열무김치를 착즙한 순도 100% 열무김치와 대관령 목장에서 방금 짜낸 싱싱한 우유의 조합",
-           "image": "/images/1.PNG"
+           "image": "/images/1.jpg"
        }
     },
     {
@@ -18,7 +18,7 @@
        "isOrderable":true,
        "detail": {
            "description": "태안 바다에서 갓 잡아올린 싱싱한 우럭을 이용한 상큼한 스무디",
-           "image": "/images/2.PNG"
+           "image": "/images/2.jpg"
        }
     },
     {
@@ -29,7 +29,7 @@
        "isOrderable":true,
        "detail": {
            "description": "목포 밤바다를 누비는 생갈치를 이용한 고단백 쉐이크 음료",
-           "image": "/images/3.PNG"
+           "image": "/images/3.jpg"
        }
     },
     {
@@ -40,7 +40,7 @@
        "isOrderable":true,
        "detail": {
            "description": "향균작용이 뛰어난 생마늘과 혈행개선에 도움을 주는 미역을 이용한 건강한 디저트 파르페",
-           "image": "/images/4.PNG"
+           "image": "/images/4.jpg"
        }
     },
     {
@@ -51,7 +51,7 @@
        "isOrderable":true,
        "detail": {
            "description": "남녀노소 불문 좋아하는 앙버터를 이용한 전통 방식의 김치찜",
-           "image": "/images/5.PNG"
+           "image": "/images/5.jpg"
        }
     },
     {
@@ -62,7 +62,7 @@
        "isOrderable":true,
        "detail": {
            "description": "흡혈귀에게 물리지 않기 위해 하루 한 끼는 꼭 먹어야 할 생마늘 샐러드",
-           "image": "/images/6.PNG"
+           "image": "/images/6.jpg"
        }
     },
     {
@@ -73,7 +73,7 @@
        "isOrderable":true,
        "detail": {
            "description": "미역국의 텁텁한 맛을 상쾌한 민트를 이용해 밸런스를 맞춘 신개념 미역국",
-           "image": "/images/7.PNG"
+           "image": "/images/7.jpg"
        }
     },
     {
@@ -84,7 +84,7 @@
        "isOrderable":true,
        "detail": {
            "description": "한우 국밥의 구수함과 제철 딸기의 오묘한 조합으로 이끌어낸 최고의 한 끼 메뉴",
-           "image": "/images/8.PNG"
+           "image": "/images/8.jpg"
        }
     },
     {
@@ -95,7 +95,7 @@
        "isOrderable":true,
        "detail": {
            "description": "매니아라면 자다가도 벌떡 일어나는 홍어를 이용한 마카롱 삼합",
-           "image": "/images/9.PNG"
+           "image": "/images/9.jpg"
        }
     },
     {
@@ -106,7 +106,7 @@
        "isOrderable":true,
        "detail": {
            "description": "마늘빵의 알싸한 향을 코다리의 담백함으로 채운 한 끼 식사로도 충분한 영양 만점 디저트",
-           "image": "/images/10.PNG"
+           "image": "/images/10.jpg"
        }
     },
     {
@@ -117,7 +117,7 @@
        "isOrderable":true,
        "detail": {
            "description": "뼈 째 넣은 정어리의 칼슘이 더해진 성장기 어린이들이 좋아하는 정어리 빙수",
-           "image": "/images/11.PNG"
+           "image": "/images/11.jpg"
        }
     },
     {
@@ -128,7 +128,7 @@
        "isOrderable":true,
        "detail": {
            "description": "톡톡 튀는 식감을 가지고 베베 꼬아 만든 스크류 바",
-           "image": "/images/12.PNG"
+           "image": "/images/12.jpg"
        }
     },
     {
@@ -139,7 +139,7 @@
        "isOrderable":true,
        "detail": {
            "description": "젤라또는 차갑게 먹는다는 편견을 깬 800도씨 화덕에 직접 구운 직화구이 젤라또",
-           "image": "/images/13.PNG"
+           "image": "/images/13.jpg"
        }
     }
   ]
