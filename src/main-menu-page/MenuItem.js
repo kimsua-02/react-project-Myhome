@@ -6,7 +6,7 @@ export const DrinkMenu = ({drinkMenu}) =>{
 
     return(
         
-        <Link to={`/drinkMenu/${drinkMenu.menuCode}`}>
+        <Link to={`/menu/hotcoffee/${drinkMenu.menuCode}`}>
             <div className="DrinkMenuItem">
                 <img src={`/images/${drinkMenu.menuCode}.jpg`} alt={`${drinkMenu.menuName}`}/>
                 <ul>{drinkMenu.menuName}</ul>
@@ -17,7 +17,7 @@ export const DrinkMenu = ({drinkMenu}) =>{
 }
 
 
-// 디저트
+//디저트
 export const DessertMenu = ({dessertMenu}) =>{
 
     return(
