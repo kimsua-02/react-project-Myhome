@@ -32,7 +32,7 @@ export const Point = () => {
     })
       .then((response) => response.json())
       .then((updatedCustomer) => {
-        setMessage(`${updatedCustomer.name}님, 포인트가 적립되었습니다! 현재 포인트: ${updatedCustomer.points}`);
+        alert(`${updatedCustomer.name}님, 포인트가 적립되었습니다! 현재 포인트: ${updatedCustomer.points}`);
         
         // 상태 업데이트
         setCustomers((prevCustomers) =>
@@ -40,7 +40,7 @@ export const Point = () => {
             cust.phone === updatedCustomer.phone ? updatedCustomer : cust
           )
         );
-      })
+      navigate("/purchase")})
       .catch((error) => console.error('Error updating customer points:', error));
   };
 
