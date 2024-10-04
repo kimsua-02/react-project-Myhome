@@ -1,4 +1,4 @@
-import useStore from "../countstore";
+import useStore from "./countstore";
 
 
 const ShoppingCart = ( {cart} ) => {
