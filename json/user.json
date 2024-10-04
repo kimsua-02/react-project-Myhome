@@ -1,0 +1,21 @@
+[
+    {
+       "userCode":1,
+       "userName":"이진우",
+       "phone":"01031246892",
+       "point":"5000"
+    },
+    {
+        "userCode":2,
+        "userName":"장근우",
+        "phone":"01012345678",
+        "point":"2000"
+     },
+     {
+        "userCode":3,
+        "userName":"윤석중",
+        "phone":"01011112222",
+        "point":"0"
+     }
+    
+  ]
