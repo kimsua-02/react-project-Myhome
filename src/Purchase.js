@@ -3,6 +3,16 @@
  * 결제 페이지
  * 포인트 적립 / 사용, 각종 페이, 카드 결제, 기프티콘 및 상품권 결제 버튼 구현
 */
+<<<<<<< HEAD
+export const Purchase = ()=>{
+    
+    return(
+        <>
+        
+        </>
+    )
+}
+=======
 
 
 // 뒤로 가기 -> ExtraShot.js 로 넘어감 (키오스크 결제 화면에서 다른 메뉴를 추가할 시 뒤로 가기 위함.)
@@ -64,3 +74,4 @@ const Purchase = () => {
 };
 
 export default Purchase;
+>>>>>>> f49a544bdeb981a9e78c212096f8c9cd51360d19

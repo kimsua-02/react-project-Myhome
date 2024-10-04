@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import IdlePage from "./IdlePage";
-<<<<<<< HEAD
+
 import ExtraShot from "./ExtraShot";
 import ShoppingCart from "./ShoppingCart";
 
@@ -12,11 +12,11 @@ function App() {
     setCart((prevMenu) => [...prevMenu, menuItem])
   }
 
-=======
-<<<<<<< HEAD
+
+
 import Redirect from "./Redirect";
 import Result from "./Result";
-=======
+
 import Layout from "./layout/Layout";
 import Coffee from "./main-menu-page/drink/Coffee";
 import Tea from "./main-menu-page/drink/Tea";
@@ -26,28 +26,28 @@ import Decaffein from "./main-menu-page/drink/Decaffein";
 import NewDrinks from "./main-menu-page/drink/New-drinks";
 import Dessert from "./main-menu-page/drink/Dessert";
 import NewDessert from "./main-menu-page/drink/New-dessert";
+import { Point } from "./Point";
 
->>>>>>> f49a544bdeb981a9e78c212096f8c9cd51360d19
+
 
 function App()
 {
->>>>>>> cd4ed88a3ad8b32a4131b42995b7417788043208
   return (
     <>
     <BrowserRouter>
       <Routes>
-<<<<<<< HEAD
+
         <Route path = "/" element ={<Redirect/>}/>
         <Route path = "/idle" element ={<IdlePage/>}/>
-<<<<<<< HEAD
+
         <Route path ="menu">
           <Route index element={<MainMenu/>}/>
         <Route path =":menucode" element={<ExtraShot addCart={addCart}/>}/>
         </Route>
       <Route path="shoppingcart" element={<ShoppingCart cart={cart}/>}/>
-=======
+
         <Route path = "/result" element ={<Result/>}/>
-=======
+
         <Route path="/" element={<Layout/>}>
         <Route path = "/idle" element ={<IdlePage/>}/>
         <Route path="/hotcoffee">
@@ -84,8 +84,10 @@ function App()
           <Route index element={<NewDessert/>}/>
         </Route>
         </Route>
->>>>>>> f49a544bdeb981a9e78c212096f8c9cd51360d19
->>>>>>> cd4ed88a3ad8b32a4131b42995b7417788043208
+
+        <Route path="/point">
+          <Route index element={<Point/>}/>
+        </Route>
       </Routes>
     </BrowserRouter>
     </>
