@@ -19,7 +19,7 @@ const ExtraShot = ({addCart}) => {
     });
 
     const [extramenu,setExtraMenu] = useState({  //추가메뉴(샷,휘핑)
-        shotOption : ''
+        shotOption : '',
         totalPrice : 0
     });
 
