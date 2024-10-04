@@ -16,6 +16,7 @@ const Nav = ()=>{
                 <NavLink to={"/newdrinks"}>New Drinks</NavLink>
                 <NavLink to={"/dessert"}>Dessert</NavLink>
                 <NavLink to={"/newdessert"}>New Dessert</NavLink>
+                <NavLink to={"/purchase"}>결제</NavLink>
             </ul>
         </div>
     )

@@ -9,6 +9,7 @@ import Decaffein from "./main-menu-page/drink/Decaffein";
 import NewDrinks from "./main-menu-page/drink/New-drinks";
 import Dessert from "./main-menu-page/drink/Dessert";
 import NewDessert from "./main-menu-page/drink/New-dessert";
+import Purchase from './Purchase';
 
 
 function App() {
@@ -50,6 +51,9 @@ function App() {
         </Route>
         <Route path="newdessert">
           <Route index element={<NewDessert/>}/>
+        </Route>
+        <Route path="purchase">
+          <Route index element={<Purchase/>}/>
         </Route>
         </Route>
       </Routes>

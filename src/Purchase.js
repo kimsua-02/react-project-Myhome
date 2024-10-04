@@ -1,25 +1,3 @@
-/**
- * Purchase.js
- * 결제 페이지
- * 포인트 적립 / 사용, 각종 페이, 카드 결제, 기프티콘 및 상품권 결제 버튼 구현
-*/
-
-
-// 뒤로 가기 -> ExtraShot.js 로 넘어감 (키오스크 결제 화면에서 다른 메뉴를 추가할 시 뒤로 가기 위함.)
-// 결제 화면 맨 상단에 " 결제수단 선택" 글자 나오게 구현
-
-// 포인트 적립/사용 버튼 크게 생성, 할인 버튼도 포인트 버튼과 같은 크기로 제작
-
-// 결제 기능 구현 (결제 수단)
-// 네이버 페이 / 카카오페이 / 카드 / 울랄라 ~ 페이 ~ 
-
-// [ 기프티콘 / 상품권 ] 버튼 크게 생성. 버튼 클릭 시 깊티 바코드를 사용할 수 있게 구현.
-// 기프티콘 => 바코드, QR코드
-
-// 결제 수단 버튼 클릭 시 포인트 적립, 사용 선택하는 네비바..? 나오게 구현.
-
-
-
 import React, { useState } from 'react';
 
 const Purchase = () => {
@@ -61,7 +39,7 @@ const PaymentComponent = ({ setCurrentComponent }) => {
   };
 
   const submitPoints = (isEarning) => {
-    const name = prompt("이름을 입력하세요:");
+    const name = prompt("포인트를 사용/적립 하실 회원님의 성함을 입력하세요:");
     alert(`${name}님, ${points} 포인트가 ${isEarning ? '적립' : '사용'}되었습니다.`);
     setPointFormVisible(false);
     setPoints('');
@@ -105,7 +83,7 @@ const PaymentComponent = ({ setCurrentComponent }) => {
         <button onClick={() => alert('페이코로 결제합니다.')}>페이코</button>
       </div>
 
-      <button onClick={() => alert('기프티콘/상품권 기능은 아직 구현되지 않았습니다.')}>기프티콘/상품권</button>
+      <button onClick={() => alert('기프티콘/상품권 사용은 불가능합니다.')}>기프티콘/상품권</button>
     </div>
   );
 };
