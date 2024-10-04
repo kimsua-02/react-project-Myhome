@@ -65,7 +65,7 @@ export const Point = () => {
           <h2>포인트 적립하시겠습니까?</h2>
           
           <button onClick={() => setIsok(true)}>네</button>
-          <button onClick={() => navigate("/purchase")}>아니오</button>
+          <button onClick={() => navigate("/result")}>아니오</button>
         </div>
       ) : (
         <div>
@@ -85,7 +85,7 @@ export const Point = () => {
             </div>
           </div>
           <br />
-          <button onClick={() => navigate("/purchase")}>적립없이 결제하기</button>
+          <button onClick={() => navigate("/result")}>적립없이 결제하기</button>
         </div>
       )}
       {message && <p>{message}</p>}

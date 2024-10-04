@@ -5,7 +5,7 @@ export const UserPoint = () => {
   const [phoneInput, setPhoneInput] = useState("");
   const [message, setMessage] = useState("");
   const [customers, setCustomers] = useState([]);
-  const [price, setPrice] = useState(100); // 초기 가격 (예시)
+  const [price,setPrice] = useState(100); // 초기 가격 (예시)
 
   const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ export const UserPoint = () => {
         .then((response) => response.json())
         .then((updatedCustomer) => {
           alert(`${updatedCustomer.name}님, 포인트가 사용되었습니다! 남은 포인트: ${updatedCustomer.points}`);
-          navigate("/purchase");
+          navigate("/result");
         })
         .catch((error) => console.error('Error updating customer points:', error));
     } else {
@@ -74,7 +74,7 @@ export const UserPoint = () => {
         </div>
       </div>
       <br />
-      <button onClick={() => navigate("/purchase")}>포인트 없이 결제하기</button>
+      <button onClick={() => navigate("/result")}>포인트 없이 결제하기</button>
       {message && <p>{message}</p>}
     </div>
   );

@@ -13,6 +13,7 @@ import Dessert from "./main-menu-page/drink/Dessert";
 import NewDessert from "./main-menu-page/drink/New-dessert";
 import { Point } from "./Point";
 import { UserPoint } from "./UserPoint";
+import { Cupon } from "./Cupon";
 
 
 function App()
@@ -63,6 +64,9 @@ function App()
           </Route>
           <Route path="/userpoint">
             <Route index element={<UserPoint/>}/>
+          </Route>
+          <Route path="/cupon">
+            <Route index element={<Cupon/>}/>
           </Route>
       </Routes>
     </BrowserRouter>
