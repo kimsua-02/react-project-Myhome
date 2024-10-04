@@ -20,7 +20,7 @@ import ShoppingCart from "./ShoppingCart";
 
 
 function App()
-{// dsfsfjslfdjslkjf지워줘요
+{
    const [cart, setCart] = useState([]);
 
  const addCart = (menuItem) => {
