@@ -1,6 +1,19 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import IdlePage from "./IdlePage";
 <<<<<<< HEAD
+import ExtraShot from "./ExtraShot";
+import ShoppingCart from "./ShoppingCart";
+
+function App() {
+
+  const [cart, setCart] = useState([]);
+
+  const addCart = (menuItem) => {
+    setCart((prevMenu) => [...prevMenu, menuItem])
+  }
+
+=======
+<<<<<<< HEAD
 import Redirect from "./Redirect";
 import Result from "./Result";
 =======
@@ -18,6 +31,7 @@ import NewDessert from "./main-menu-page/drink/New-dessert";
 
 function App()
 {
+>>>>>>> cd4ed88a3ad8b32a4131b42995b7417788043208
   return (
     <>
     <BrowserRouter>
@@ -25,6 +39,13 @@ function App()
 <<<<<<< HEAD
         <Route path = "/" element ={<Redirect/>}/>
         <Route path = "/idle" element ={<IdlePage/>}/>
+<<<<<<< HEAD
+        <Route path ="menu">
+          <Route index element={<MainMenu/>}/>
+        <Route path =":menucode" element={<ExtraShot addCart={addCart}/>}/>
+        </Route>
+      <Route path="shoppingcart" element={<ShoppingCart cart={cart}/>}/>
+=======
         <Route path = "/result" element ={<Result/>}/>
 =======
         <Route path="/" element={<Layout/>}>
@@ -64,6 +85,7 @@ function App()
         </Route>
         </Route>
 >>>>>>> f49a544bdeb981a9e78c212096f8c9cd51360d19
+>>>>>>> cd4ed88a3ad8b32a4131b42995b7417788043208
       </Routes>
     </BrowserRouter>
     </>
