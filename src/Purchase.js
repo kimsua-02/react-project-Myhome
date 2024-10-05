@@ -37,6 +37,7 @@ const PaymentComponent = ({ setCurrentComponent }) => {
   const [totalPrice, setTotalPrice] = useState('');
   const [pointFormVisible, setPointFormVisible] = useState(false);
   const [earnedPoints, setEarnedPoints] = useState(0);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
 
   const applyDiscount = () => {
     const price = parseFloat(totalPrice);
@@ -72,8 +73,9 @@ const PaymentComponent = ({ setCurrentComponent }) => {
     setPointFormVisible(false);
   };
 
-  const completePayment = () => {
-    alert("결제가 완료되었습니다. 2초 후에 첫화면으로 돌아갑니다.");
+  const completePayment = (method) => {
+    setSelectedPaymentMethod(method);
+    alert(method + "로 결제가 완료되었습니다. 2초 후에 첫화면으로 돌아갑니다.");
     setTimeout(() => {
       setTotalPrice('');
       setEarnedPoints(0);
@@ -114,10 +116,10 @@ const PaymentComponent = ({ setCurrentComponent }) => {
       <h3>결제 금액: {parseFloat(totalPrice).toFixed(2)} 원</h3>
       <h3>보유 포인트: {earnedPoints.toFixed(2)} 포인트</h3>
       <div>
-        <button onClick={completePayment}>네이버페이</button>
-        <button onClick={completePayment}>카카오페이</button>
-        <button onClick={completePayment}>카드</button>
-        <button onClick={completePayment}>페이코</button>
+        <button onClick={() => completePayment("네이버페이")}>네이버페이</button>
+        <button onClick={() => completePayment("카카오페이")}>카카오페이</button>
+        <button onClick={() => completePayment("카드")}>카드</button>
+        <button onClick={() => completePayment("페이코")}>페이코</button>
       </div>
 
       <button onClick={() => alert('기프티콘/상품권 기능은 아직 구현되지 않았습니다.')}>기프티콘/상품권</button>
