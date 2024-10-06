@@ -6,18 +6,31 @@
 
 
 import React, { useState } from 'react';
+import earnedPoints from 'react';
 
 const Purchase = () => {
   const [currentComponent, setCurrentComponent] = useState('Main');
+  const [earnedPoints, setEarnedPoints] = useState(0); // 포인트 상태를 Purchase 컴포넌트에서 관리
 
   const renderComponent = () => {
     switch (currentComponent) {
       case 'Main':
         return <MainComponent setCurrentComponent={setCurrentComponent} />;
       case 'Payment':
-        return <PaymentComponent setCurrentComponent={setCurrentComponent} />;
+        return (
+          <PaymentComponent 
+            setCurrentComponent={setCurrentComponent} 
+            earnedPoints={earnedPoints} // 포인트를 Payment 컴포넌트에 전달
+            setEarnedPoints={setEarnedPoints} // 포인트 업데이트 함수 전달
+          />
+        );
       case 'PointAction':
-        return <PointActionComponent setCurrentComponent={setCurrentComponent} />;
+        return (
+          <PointActionComponent 
+            setCurrentComponent={setCurrentComponent} 
+            setEarnedPoints={setEarnedPoints} // 포인트 상태 변경 함수 전달
+          />
+        );
       default:
         return <MainComponent setCurrentComponent={setCurrentComponent} />;
     }
@@ -35,10 +48,8 @@ const MainComponent = ({ setCurrentComponent }) => {
   );
 };
 
-const PaymentComponent = ({ setCurrentComponent }) => {
+const PaymentComponent = ({ setCurrentComponent, earnedPoints, setEarnedPoints }) => {
   const [totalPrice, setTotalPrice] = useState('');
-  const [earnedPoints, setEarnedPoints] = useState(0);
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
 
   const applyDiscount = () => {
     const price = parseFloat(totalPrice);
@@ -53,11 +64,9 @@ const PaymentComponent = ({ setCurrentComponent }) => {
   };
 
   const completePayment = (method) => {
-    setSelectedPaymentMethod(method);
     alert(`${method}로 결제가 완료되었습니다. 확인을 누르시면 2초 후에 첫화면으로 돌아갑니다.`);
     setTimeout(() => {
       setTotalPrice('');
-      setEarnedPoints(0);
       setCurrentComponent('Main');
     }, 2000);
   };
@@ -95,9 +104,8 @@ const PaymentComponent = ({ setCurrentComponent }) => {
   );
 };
 
-const PointActionComponent = ({ setCurrentComponent }) => {
+const PointActionComponent = ({ setCurrentComponent, setEarnedPoints }) => {
   const [totalPrice, setTotalPrice] = useState('');
-  const [earnedPoints, setEarnedPoints] = useState(0);
 
   const applyPoints = (isEarning) => {
     const price = parseFloat(totalPrice);
@@ -105,16 +113,16 @@ const PointActionComponent = ({ setCurrentComponent }) => {
 
     if (isEarning) {
       const earned = price * 0.05;
-      setEarnedPoints(prev => prev + earned);
+      setEarnedPoints(prev => prev + earned); // 포인트 적립
       alert(`${name}님, ${earned.toFixed(2)} 포인트가 적립되었습니다.`);
     } else {
-      const use = parseFloat(prompt("사용할 포인트 수를 입력해주세요: "));
+      const use = parseFloat(prompt("사용할 포인트 수를 입력해주세요 : "));
       if (use > earnedPoints) {
         alert("보유 포인트가 부족합니다.");
       } else {
         const newTotal = price - use;
         setTotalPrice(newTotal.toFixed(2));
-        setEarnedPoints(prev => prev - use);
+        setEarnedPoints(prev => prev - use); // 포인트 사용
         alert(`${name}님, ${use} 포인트가 사용되었습니다.`);
       }
     }
