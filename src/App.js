@@ -11,9 +11,13 @@ import Decaffein from "./main-menu-page/drink/Decaffein";
 import NewDrinks from "./main-menu-page/drink/New-drinks";
 import Dessert from "./main-menu-page/drink/Dessert";
 import NewDessert from "./main-menu-page/drink/New-dessert";
+<<<<<<< HEAD
 import { useState } from "react";
 import { Point } from "./Point";
 <<<<<<< HEAD
+=======
+import Purchase from './Purchase';
+>>>>>>> afa7e9609a64e39c79242d1b4d6d2aa257dec432
 
 function App()
 {
@@ -68,8 +72,14 @@ function App() {
         <Route path="/userpoint">
           <Route index element={<UserPoint />} />
         </Route>
+<<<<<<< HEAD
         <Route path="/cupon">
           <Route index element={<Cupon />} />
+=======
+        <Route path="purchase">
+          <Route index element={<Purchase/>}/>
+        </Route>
+>>>>>>> afa7e9609a64e39c79242d1b4d6d2aa257dec432
         </Route>
 >>>>>>> 8e87495d2f1774c9acb136b8e3a1a415731f063e
       </Routes>
