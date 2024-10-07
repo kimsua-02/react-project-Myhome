@@ -11,21 +11,9 @@ import Decaffein from "./main-menu-page/drink/Decaffein";
 import NewDrinks from "./main-menu-page/drink/New-drinks";
 import Dessert from "./main-menu-page/drink/Dessert";
 import NewDessert from "./main-menu-page/drink/New-dessert";
-<<<<<<< HEAD
 import { useState } from "react";
 import { Point } from "./Point";
-<<<<<<< HEAD
-=======
-import Purchase from './Purchase';
->>>>>>> afa7e9609a64e39c79242d1b4d6d2aa257dec432
-
-function App()
-{
-   const [cart, setCart] = useState([]);
-
- const addCart = (menuItem) => {
-     setCart((prevMenu) => [...prevMenu, menuItem]);
-=======
+import Purchase from "./Purchase";
 import MenuDetail from "./MenuDetail"; 
 import ShoppingCart from "./ShoppingCart"; 
 import { UserPoint } from "./UserPoint"; 
@@ -33,9 +21,9 @@ import { Cupon } from "./Cupon";
 
 function App() {
   const [cart, setCart] = useState([]);
+
   const addCart = (menuItem) => {
     setCart((prevMenu) => [...prevMenu, menuItem]);
->>>>>>> 8e87495d2f1774c9acb136b8e3a1a415731f063e
   };
 
   return (
@@ -58,30 +46,13 @@ function App() {
           <Route path="newdessert" element={<NewDessert />} />
           <Route path="point" element={<Point />} />
           {/* 추가 메뉴 상세 옵션 */}
-<<<<<<< HEAD
-          <Route path=":menuCode" element={<ExtraShot addCart={addCart} />} />
-        </Route>
-        <Route path="/shoppingcart" element={<ShoppingCart cart={cart} setCart={setCart} />} />
-=======
           <Route path=":menuCode" element={<MenuDetail addCart={addCart} />} />
-          <Route path="shoppingcart" element={<ShoppingCart cart={cart} />} />
+          <Route path="shoppingcart" element={<ShoppingCart cart={cart} setCart={setCart} />} />
         </Route>
-        <Route path="/point">
-          <Route index element={<Point />} />
-        </Route>
-        <Route path="/userpoint">
-          <Route index element={<UserPoint />} />
-        </Route>
-<<<<<<< HEAD
-        <Route path="/cupon">
-          <Route index element={<Cupon />} />
-=======
-        <Route path="purchase">
-          <Route index element={<Purchase/>}/>
-        </Route>
->>>>>>> afa7e9609a64e39c79242d1b4d6d2aa257dec432
-        </Route>
->>>>>>> 8e87495d2f1774c9acb136b8e3a1a415731f063e
+        <Route path="/point" element={<Point />} />
+        <Route path="/userpoint" element={<UserPoint />} />
+        <Route path="/cupon" element={<Cupon />} />
+        <Route path="/purchase" element={<Purchase />} />
       </Routes>
     </BrowserRouter>
   );
