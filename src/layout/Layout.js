@@ -4,12 +4,15 @@ import Nav from "../navbar/Nav";
 
 
 
+
 const Layout = ()=>{
 
     return(
 
-        <>
-            <Nav/>
+
+         <>
+             <Nav/>
+
             <Outlet/>
         </>
     )

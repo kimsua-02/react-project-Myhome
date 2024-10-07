@@ -11,11 +11,19 @@ import Decaffein from "./main-menu-page/drink/Decaffein";
 import NewDrinks from "./main-menu-page/drink/New-drinks";
 import Dessert from "./main-menu-page/drink/Dessert";
 import NewDessert from "./main-menu-page/drink/New-dessert";
+import { useState } from "react";
 import { Point } from "./Point";
-
+import ExtraShot from "./ExtraShot";
+import ShoppingCart from "./ShoppingCart";
 
 function App()
 {
+   const [cart, setCart] = useState([]);
+
+ const addCart = (menuItem) => {
+     setCart((prevMenu) => [...prevMenu, menuItem])
+  }
+
   return (
     <>
     <BrowserRouter>
@@ -23,10 +31,13 @@ function App()
         <Route path = "/" element ={<Redirect/>}/>
         <Route path = "/idle" element ={<IdlePage/>}/>
         <Route path="/menu" element={<Layout/>}>
-          <Route path="/menu/hotcoffee" index element={<Coffee/>}>
-            {/* <Route index element={<Coffee/>}/> */}
-          </Route>
-          <Route path="/menu/icecoffee">
+
+          <Route path="/menu/hotcoffee" element={<Coffee/>} >
+            <Route path =":menucode" element={<ExtraShot addCart={addCart}/>}/>
+            <Route path="shoppingcart" element={<ShoppingCart cart={cart}/>}/>
+         </Route>
+                    <Route path="/menu/icecoffee">
+
             <Route index element={<Coffee/>}/>
           </Route>
           <Route path="/menu/hottea">
@@ -56,12 +67,16 @@ function App()
           <Route path="/menu/newdessert">
             <Route index element={<NewDessert/>}/>
           </Route>
-        </Route>
-        <Route path="/point">
+
+          <Route path="/menu/point">
             <Route index element={<Point/>}/>
           </Route>
+          <Route path = "result" element ={<Result/>}/>
+        </Route>
+
       </Routes>
     </BrowserRouter>
+
     </>
   );
 }

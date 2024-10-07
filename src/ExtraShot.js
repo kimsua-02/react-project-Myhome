@@ -1,12 +1,14 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import menus from "../json/";
+import drinkMenus from "./json/drink.json";
+
 
 const ExtraShot = ({addCart}) => {
     function getMenuDetail(menuCode){
-        return menus.filter(menu => menu.menuCode === parseInt(menuCode))[0];
+        return drinkMenus.filter(menu => menu.menuCode === parseInt(menuCode))[0];
     }
+
 
     const navigate = useNavigate();
 
@@ -19,9 +21,12 @@ const ExtraShot = ({addCart}) => {
     });
 
     const [extramenu,setExtraMenu] = useState({  //추가메뉴(샷,휘핑)
+
         shotOption : '',
         totalPrice : 0
     });
+
+
 
     useEffect(()=>{
         const menuDetail = getMenuDetail(menuCode);
@@ -47,7 +52,7 @@ const ExtraShot = ({addCart}) => {
     };
     
     const onClickHandler2 = () => {
-        navigate(`/MainMenu`);
+        navigate(`/idle`);
     }
 
     return(

@@ -7,6 +7,7 @@
 
 import { useEffect, useState } from "react";
 import "./IdlePage.css";
+import { language } from "./language";
 
 const img = ["bam_port.jpg", "decaff_port.jpg", "genshin_port.jpg", "knotted_port.jpg", "teapleasure_port.jpg", "tumbler_port.jpg"];
 
@@ -14,7 +15,7 @@ const IdlePage = () =>
 {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const [lang, setLang] = useState(true);
+    const { lang, setLang } = language();
 
     useEffect(() => 
     {
@@ -27,15 +28,15 @@ const IdlePage = () =>
     }, [currentIndex]);
 
     const onClickHandler = () => 
-    {
-        setLang(!lang);
+    {        
+        setLang();
     }
 
     return (
         <div>
-            <a href="/mainmenu">
-                <h1 className="idle_image_text">{lang ? "주문을 원하시면 클릭해주세요." : "Click to start order."}</h1>
-                <img src = { img[currentIndex] } className="idle_image" alt = "slide"/>
+            <a href = "/menu/hotcoffee">
+                <h1 className = "idle_image_text">{lang ? "주문을 원하시면 클릭해주세요." : "Click to start order."}</h1>
+                <img src = { img[currentIndex] } className = "idle_image" alt = "slide"/>
             </a>
             <button className = "idle_lang_button" onClick = {onClickHandler}><img src = {lang ? "flag3dusa.png" : "flag3dkor.png"} className = "idle_lang_img" alt = "lang"/></button>
         </div>
