@@ -9,8 +9,8 @@ export const DrinkMenu = ({drinkMenu}) =>{
         <Link to={`/menu/${drinkMenu.menuCode}`}>
             <div className="DrinkMenuItem">
                 <img src={`/images/${drinkMenu.menuCode}.jpg`} alt={`${drinkMenu.menuName}`}/>
-                <ul>{drinkMenu.menuName}</ul>
-                <ul>{drinkMenu.menuPrice}</ul>
+                <h4>{drinkMenu.menuName}</h4>
+                <ul>{drinkMenu.menuPrice}원</ul>
             </div>
         </Link>
     )
@@ -22,10 +22,11 @@ export const DessertMenu = ({dessertMenu}) =>{
 
     return(
 
-        <Link to={`/dessertMenu/${dessertMenu.menuCode}`}>
+        <Link to={`/menu/${dessertMenu.menuCode}`}>
             <div className="DessertMenuItem">
-                <ul>{dessertMenu.menuName}</ul>
-                <ul>{dessertMenu.menuPrice}</ul>
+            <img src={`/images/${dessertMenu.menuCode}.jpg`} alt={`${dessertMenu.menuName}`}/>
+                <h4>{dessertMenu.menuName}</h4>
+                <ul>{dessertMenu.menuPrice}원</ul>
             </div>
         </Link>
     )
