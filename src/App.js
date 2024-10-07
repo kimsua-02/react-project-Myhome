@@ -13,42 +13,23 @@ import Dessert from "./main-menu-page/drink/Dessert";
 import NewDessert from "./main-menu-page/drink/New-dessert";
 import { useState } from "react";
 import { Point } from "./Point";
-import ExtraShot from "./ExtraShot"; 
+import MenuDetail from "./MenuDetail"; 
 import ShoppingCart from "./ShoppingCart"; 
 import { UserPoint } from "./UserPoint"; 
 import { Cupon } from "./Cupon"; 
 
 function App() {
   const [cart, setCart] = useState([]);
-
-<<<<<<< HEAD
-function App()
-{
-   const [cart, setCart] = useState([]);
-
-  const addCart = (menuItem) => {
-     setCart((prevMenu) => [...prevMenu, menuItem])
-  }
-
-  return (
-    <>
-   <BrowserRouter>
-=======
   const addCart = (menuItem) => {
     setCart((prevMenu) => [...prevMenu, menuItem]);
   };
 
   return (
     <BrowserRouter>
->>>>>>> 9340aeef87495a47142f8eb5b8695aba9f005072
       <Routes>
         <Route path="/" element={<Redirect />} />
         <Route path="/idle" element={<IdlePage />} />
         <Route path="/menu" element={<Layout />}>
-<<<<<<< HEAD
-=======
-
->>>>>>> 9340aeef87495a47142f8eb5b8695aba9f005072
           {/* 메뉴별 라우트 설정 */}
           <Route path="hotcoffee" element={<Coffee cart={cart} />} />
           <Route path="icecoffee" element={<Coffee />} />
@@ -63,12 +44,7 @@ function App()
           <Route path="newdessert" element={<NewDessert />} />
           <Route path="point" element={<Point />} />
           {/* 추가 메뉴 상세 옵션 */}
-<<<<<<< HEAD
-          <Route path=":menuCode" element={<ExtraShot addCart={addCart} cart={cart} setCart={setCart} />} />
-        </Route>
-        <Route path="/shoppingcart" element={<ShoppingCart cart={cart} />} />
-=======
-          <Route path=":menuCode" element={<ExtraShot addCart={addCart} />} />
+          <Route path=":menuCode" element={<MenuDetail addCart={addCart} />} />
           <Route path="shoppingcart" element={<ShoppingCart cart={cart} />} />
         </Route>
         <Route path="/point">
@@ -80,8 +56,6 @@ function App()
         <Route path="/cupon">
           <Route index element={<Cupon />} />
         </Route>
-
->>>>>>> 9340aeef87495a47142f8eb5b8695aba9f005072
       </Routes>
     </BrowserRouter>
   );
