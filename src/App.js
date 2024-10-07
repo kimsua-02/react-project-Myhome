@@ -1,7 +1,5 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import IdlePage from "./IdlePage";
-import ExtraShot from "./ExtraShot";
-import ShoppingCart from "./ShoppingCart";
 import Redirect from "./Redirect";
 import Result from "./Result";
 import Layout from "./layout/Layout";
@@ -17,6 +15,7 @@ import { useState } from "react";
 import { Point } from "./Point";
 import ExtraShot from "./ExtraShot";
 import ShoppingCart from "./ShoppingCart";
+import Purchase from "./Purchase";
 
 
 function App()
@@ -71,8 +70,9 @@ function App()
           <Route path="/menu/point">
             <Route index element={<Point/>}/>
           </Route>
-          <Route path = "/result" element ={<Result/>}/>
         </Route>
+        <Route path = "/purchase" element ={<Purchase/>}/>
+        <Route path = "/result" element ={<Result/>}/>
       </Routes>
     </BrowserRouter>
 
