@@ -1,11 +1,10 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import drinkMenus from "./json/drink.json"
-import dessertMenus from "./json/dessert.json"
 import { getMenuDetail } from "./main-menu-page/MenuAPI";
 
 const ExtraShot = ({addCart}) => {
+
 
 
     const navigate = useNavigate();
@@ -17,11 +16,12 @@ const ExtraShot = ({addCart}) => {
         menuPrice : 0,
         detail : {description:'', image:''}
     });
-
     const [extramenu,setExtraMenu] = useState({  //추가메뉴(샷,휘핑)
         shotOption : '',
         totalPrice : 0
     });
+
+
 
 /*
     "menuCode":1,
@@ -36,17 +36,15 @@ const ExtraShot = ({addCart}) => {
 */
 
     useEffect(() => {
-    try {
         const menuDetail = getMenuDetail(menuCode);
+        if(menuDetail){
         setMenu(menuDetail);
         setExtraMenu(prevState => ({
             ...prevState,
             totalPrice: menuDetail.menuPrice
-        }));
-    } catch (error) {
-        console.error("Failed to fetch menu detail:", error);
-    }
-}, [menuCode]);
+        }))};
+    }, [menuCode]);
+
 
     const handleOptionSelect = (option, price) => {
         setExtraMenu(prevState => ({
@@ -56,6 +54,7 @@ const ExtraShot = ({addCart}) => {
     }));
     };
 
+
     const onClickHandler = () => {
         addCart({
             ...menu,
@@ -64,7 +63,7 @@ const ExtraShot = ({addCart}) => {
     };
     
     const onClickHandler2 = () => {
-        navigate(`/idle`);
+        navigate(`/menu/hotcoffee`);
     }
 
     return(
@@ -74,7 +73,18 @@ const ExtraShot = ({addCart}) => {
             
             {menu.menuName ? (
                 <>
+            
+            
+            {menu.menuName ? (
+                <>
             <img src={menu.detail.image} style={{maxWidth:300}} alt={menu.menuName}/>
+            <h3>{menu.menuName}</h3>
+            <h3>{menu.menuPrice}원</h3>
+            <p>{menu.detail.description}</p>
+                </>
+            ) : (
+                <p>메뉴를 불러오는 중 입니다..</p>
+            )}
             <h3>{menu.menuName}</h3>
             <h3>{menu.menuPrice}원</h3>
             <p>{menu.detail.description}</p>
