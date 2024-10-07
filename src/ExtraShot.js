@@ -1,8 +1,8 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import dessertMenus from "./json/dessert.json"
-import drinkMenus from "./json/drink.json";
+import { getMenuDetail } from "./main-menu-page/MenuAPI";
+
 
 const ExtraShot = ({addCart}) => {
 
@@ -16,7 +16,6 @@ const ExtraShot = ({addCart}) => {
         menuPrice : 0,
         detail : {description:'', image:''}
     });
-
     const [extramenu,setExtraMenu] = useState({  //추가메뉴(샷,휘핑)
         shotOption : '',
         totalPrice : 0
