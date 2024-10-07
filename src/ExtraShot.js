@@ -1,12 +1,10 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
+import dessertMenus from "./json/dessert.json"
 import drinkMenus from "./json/drink.json";
 
 const ExtraShot = ({addCart}) => {
-    function getMenuDetail(menuCode){
-        return drinkMenus.filter(menu => menu.menuCode === parseInt(menuCode))[0];
-    }
 
 
     const navigate = useNavigate();
@@ -28,19 +26,20 @@ const ExtraShot = ({addCart}) => {
 
     useEffect(()=>{
         const menuDetail = getMenuDetail(menuCode);
+        if(menuDetail){
         setMenu(menuDetail);
         setExtraMenu(prevState => ({
             ...prevState,
             totalPrice: menuDetail.menuPrice
         }));
-    }, [menuCode]);
+    }}, [menuCode]);
 
     const handleOptionSelect = (option, price) => {
         setExtraMenu(prevState => ({
             shotOption: option,
             totalPrice: menu.menuPrice + price
     }));
-};
+    };
 
     const onClickHandler = () => {
         addCart({
@@ -50,15 +49,24 @@ const ExtraShot = ({addCart}) => {
     };
     
     const onClickHandler2 = () => {
-        navigate(`/idle`);
+        navigate(`/menu/hotcoffee`);
     }
 
     return(
         <>
             <h2>선택하신 상품의 옵션상품을 모두 선택해주세요</h2>
+            
+            
+            {menu.menuName ? (
+                <>
             <img src={menu.detail.image} style={{maxWidth:300}} alt={menu.menuName}/>
-            <h3>{menu.menuName}</h3><h3>{menu.menuPrice}원</h3>
-            <button onClick={onClickHandler}>주문담기</button><button onClick={onClickHandler2}>취소</button>
+            <h3>{menu.menuName}</h3>
+            <h3>{menu.menuPrice}원</h3>
+            <p>{menu.detail.description}</p>
+                </>
+            ) : (
+                <p>메뉴를 불러오는 중 입니다..</p>
+            )}
             <div>
                 <h3>농도(선택, 단일선택)</h3>
                 <div style={{ display: 'flex', justifyContent: 'space-between'}}>

@@ -13,9 +13,12 @@ import Dessert from "./main-menu-page/drink/Dessert";
 import NewDessert from "./main-menu-page/drink/New-dessert";
 import { useState } from "react";
 import { Point } from "./Point";
+
+
 import ExtraShot from "./ExtraShot";
 import ShoppingCart from "./ShoppingCart";
 import Purchase from "./Purchase";
+
 
 
 function App()
@@ -27,17 +30,36 @@ function App()
   }
 
   return (
-    <>
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Redirect />} />
+        <Route path="/idle" element={<IdlePage />} />
+        <Route path="/menu" element={<Layout />}>
+          {/* 메뉴별 라우트 설정 */}
+          <Route path="hotcoffee" element={<Coffee cart={cart} />} />
+          <Route path="icecoffee" element={<Coffee />} />
+          <Route path="hottea" element={<Tea />} />
+          <Route path="icetea" element={<Tea />} />
+          <Route path="ade&juice" element={<AdeandJuice />} />
+          <Route path="smoothie&frappe" element={<SmoothieandFrappe />} />
+          <Route path="hotdecaf" element={<Decaffein />} />
+          <Route path="icedecaf" element={<Decaffein />} />
+          <Route path="newdrinks" element={<NewDrinks />} />
+          <Route path="dessert" element={<Dessert />} />
+          <Route path="newdessert" element={<NewDessert />} />
+          <Route path="point" element={<Point />} />
+          {/* 추가 메뉴 상세 옵션 */}
+          <Route path=":menuCode" element={<ExtraShot addCart={addCart} />} />
         <Route path = "/" element ={<Redirect/>}/>
         <Route path = "/idle" element ={<IdlePage/>}/>
         <Route path="/menu" element={<Layout/>}>
+
           <Route path="/menu/hotcoffee" element={<Coffee/>} >
             <Route path =":menucode" element={<ExtraShot addCart={addCart}/>}/>
             <Route path="shoppingcart" element={<ShoppingCart cart={cart}/>}/>
          </Route>
                     <Route path="/menu/icecoffee">
+
             <Route index element={<Coffee/>}/>
           </Route>
           <Route path="/menu/hottea">
@@ -67,16 +89,15 @@ function App()
           <Route path="/menu/newdessert">
             <Route index element={<NewDessert/>}/>
           </Route>
+
           <Route path="/menu/point">
             <Route index element={<Point/>}/>
           </Route>
         </Route>
-        <Route path = "/purchase" element ={<Purchase/>}/>
-        <Route path = "/result" element ={<Result/>}/>
+        </Route>
+
       </Routes>
     </BrowserRouter>
-
-    </>
   );
 }
 
