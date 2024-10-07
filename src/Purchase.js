@@ -11,8 +11,6 @@ import { useState } from "react";
 // 결제 화면 맨 상단에 " 결제수단 선택" 글자 나오게 구현
 
 
-import React, { useState } from 'react';
-
 
 const Purchase = () => {
   const [currentComponent, setCurrentComponent] = useState('Main');
