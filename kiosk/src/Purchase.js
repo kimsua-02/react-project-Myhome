@@ -88,13 +88,13 @@ const PaymentComponent = ({ setCurrentComponent }) => {
   };
 
   const applyGiftCard = () => {
-    if (giftCardCode === ""){
-      const discountAmount = 10000;
+    if (giftCardCode === "suasua"){ // 임의로 넣은 기프티콘(상픔권) 코드
+      const discountAmount = 10000; // 기프티콘 잔액 : 10,000원
       const newTotalPrice = Math.max(0, parseFloat(totalPrice - discountAmount));
       setTotalPrice(newTotalPrice.toFixed(0));
       alert(`기프티콘 사용이 완료되었습니다. 결제 금액이 ${discountAmount} 원 차감되었습니다.`)
     } else {
-      alert('유효하지 않은 기프티콘/상품권 코드입니다.');
+      alert('유효하지 않은 기프티콘/상품권 코드입니다.'); // suasua 가 아닌 다른 값을 입력할 때 나오는 메세지
     }
     setGiftCardCode('');
   }
