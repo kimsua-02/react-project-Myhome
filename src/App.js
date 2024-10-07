@@ -13,8 +13,10 @@ import Dessert from "./main-menu-page/drink/Dessert";
 import NewDessert from "./main-menu-page/drink/New-dessert";
 import { useState } from "react";
 import { Point } from "./Point";
-import ExtraShot from "./ExtraShot";
-import ShoppingCart from "./ShoppingCart";
+import ExtraShot from "./ExtraShot"; 
+import ShoppingCart from "./ShoppingCart"; 
+import { UserPoint } from "./UserPoint"; 
+import { Cupon } from "./Cupon"; 
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -29,6 +31,7 @@ function App() {
         <Route path="/" element={<Redirect />} />
         <Route path="/idle" element={<IdlePage />} />
         <Route path="/menu" element={<Layout />}>
+
           {/* 메뉴별 라우트 설정 */}
           <Route path="hotcoffee" element={<Coffee cart={cart} />} />
           <Route path="icecoffee" element={<Coffee />} />
@@ -46,7 +49,16 @@ function App() {
           <Route path=":menuCode" element={<ExtraShot addCart={addCart} />} />
           <Route path="shoppingcart" element={<ShoppingCart cart={cart} />} />
         </Route>
-        <Route path="/result" element={<Result />} />
+        <Route path="/point">
+          <Route index element={<Point />} />
+        </Route>
+        <Route path="/userpoint">
+          <Route index element={<UserPoint />} />
+        </Route>
+        <Route path="/cupon">
+          <Route index element={<Cupon />} />
+        </Route>
+
       </Routes>
     </BrowserRouter>
   );
