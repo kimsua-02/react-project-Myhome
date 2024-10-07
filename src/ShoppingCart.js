@@ -1,9 +1,6 @@
-import useStore from "./countstore";
+import { useState } from "react";
 
-
-const ShoppingCart = ( {cart} ) => {
-
-    const {count, increment, decrement, reset} = useStore();
+const ShoppingCart = ( {cart = []} ) => {
 
 
     return(
@@ -11,19 +8,34 @@ const ShoppingCart = ( {cart} ) => {
         <h1>장바구니</h1>      
         <div>
             {cart.length > 0 ? (cart.map(menu => (
-                <div key={menu.menuCode}>
-                    <li>{menu.menuName}</li> 
-                    <button onClick={increment}>+</button>
-                    <button onClick={decrement}>-</button>
-                    <button onClick={reset}>초기화</button>
-                    <span>{menu.menuPrice}원</span>
-                </div>
+               <MenuItem key = {menu.menuCode} menu={menu}/>
             ))
         ) : (
             <span>선택한 커피가 없습니다.</span>
         )}
         </div>
       </>      
+    );
+};
+
+const MenuItem = ({menu}) => {
+    const [count, setCount] = useState(0);
+
+    const increment = () => setCount(count + 1);
+    const decrement = () => setCount(count > 0 ? count - 1 : 0);
+    const reset = () => setCount(0);
+
+    return (
+        <div>
+            <li>{menu.menuName}</li>
+            <div style={{ display : "flex", alignItems: "center", gap: "5px"}}>
+                <button onClick={increment}>+</button>
+                <h3>{count}</h3>
+                <button onClick={decrement}>-</button>
+            </div>
+            <button onClick={reset}>초기화</button>
+            <h3>{menu.menuPrice}</h3>
+        </div>
     );
 };
 
