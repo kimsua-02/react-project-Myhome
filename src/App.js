@@ -1,6 +1,9 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import IdlePage from "./IdlePage";
+import MenuDetail from "./MenuDetail";
+import ShoppingCart from "./ShoppingCart";
 import Redirect from "./Redirect";
+import Result from "./Result";
 import Layout from "./layout/Layout";
 import Coffee from "./main-menu-page/drink/Coffee";
 import Tea from "./main-menu-page/drink/Tea";
@@ -12,8 +15,6 @@ import Dessert from "./main-menu-page/drink/Dessert";
 import NewDessert from "./main-menu-page/drink/New-dessert";
 import { useState } from "react";
 import { Point } from "./Point";
-import ExtraShot from "./ExtraShot";
-import ShoppingCart from "./ShoppingCart";
 
 
 function App()
@@ -25,7 +26,6 @@ function App()
   }
 
   return (
-    <>
    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Redirect />} />
@@ -45,12 +45,11 @@ function App()
           <Route path="newdessert" element={<NewDessert />} />
           <Route path="point" element={<Point />} />
           {/* 추가 메뉴 상세 옵션 */}
-          <Route path=":menuCode" element={<ExtraShot addCart={addCart} cart={cart} setCart={setCart} />} />
+          <Route path=":menuCode" element={<MenuDetail addCart={addCart} cart={cart} setCart={setCart} />} />
         </Route>
         <Route path="/shoppingcart" element={<ShoppingCart cart={cart} />} />
       </Routes>
     </BrowserRouter>
-    </>
   );
 }
 
