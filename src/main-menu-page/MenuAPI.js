@@ -1,5 +1,7 @@
 import drinkMenus from "../json/drink.json"
 import dessertMenus from "../json/dessert.json"
+import mdItem from "../json/MDProduct.json"
+import newMenu from "../json/newMenu.json"
 
 
 // 커피 
@@ -68,17 +70,6 @@ const isIceDrinks = (drinkMenus)=>{
 export const iceDrinks = ()=>{ return drinkMenus.filter(isIceDrinks) }
 
 
-
-
-// 음료 신메뉴
-const isNewDrinks = (drinkMenus)=>{
-    if(drinkMenus.categoryName === "신메뉴"){return true}
-}
-export const newDrinks = ()=>{ return drinkMenus.filter(isNewDrinks) }
-
-
-
-
 // 디저트
 const isDessert = (dessertMenus)=>{
     if(dessertMenus.categoryName === "디저트"){return true}
@@ -87,16 +78,42 @@ export const dessert = ()=>{ return dessertMenus.filter(isDessert) }
 
 
 
-// 디저트 신메뉴
-const isNewDessert = (dessertMenus)=>{
-    if(dessertMenus.categoryName === "신메뉴"){return true}
+
+
+//신메뉴
+const isNewDrinks = (newMenu)=>{
+    if(newMenu.categoryName === "음료"){return true}
 }
-export const newDessert = ()=>{ return dessertMenus.filter(isNewDessert) }
+export const newDrinks = ()=>{ return newMenu.filter(isNewDrinks) }
+
+const isNewDessert = (newMenu)=>{
+    if(newMenu.categoryName === "디저트"){return true}
+}
+export const newDessert = ()=>{ return newMenu.filter(isNewDessert) }
 
 
+
+// Md
+export const mdProduct= (mdItem)=>{
+    return mdItem;
+}
 
 // 음료 상세메뉴
-export function getMenuDetail(menuCode){
+export function drinkgetMenuDetail(menuCode){
     const codeAsNumber = parseInt(menuCode);
     return drinkMenus.filter(menu => menu.menuCode === codeAsNumber)[0];
 }
+
+// 디저트 상세메뉴
+export function dessertgetMenuDetail(menuCode){
+    const codeAsNumber = parseInt(menuCode);
+    return dessertMenus.filter(menu => menu.menuCode === codeAsNumber)[0];
+}
+
+// MD 상세메뉴
+
+export function mdgetMenuDetail(menuCode){
+    const codeAsNumber = parseInt(menuCode);
+    return mdItem.filter(menu => menu.menuCode === codeAsNumber)[0];
+}
+

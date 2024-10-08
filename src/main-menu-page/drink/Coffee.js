@@ -1,12 +1,13 @@
+
 import { useEffect, useState } from "react";
 import { hotCoffee, iceCoffee } from "../MenuAPI";
 import { DrinkMenu } from "../MenuItem";
-import ShoppingCart from "../../ShoppingCart";
 
 
 
 
-export const HotCoffee = ({cart})=>{
+
+export const HotCoffee = ()=>{
 
     const [coffeeMenu, setCoffeeMenu] = useState([]);
 
@@ -18,7 +19,6 @@ export const HotCoffee = ({cart})=>{
     return(
         <div>
             {coffeeMenu.map(hotCoffee => <DrinkMenu key={hotCoffee.menuCode} drinkMenu={hotCoffee}/>)}
-            <ShoppingCart cart= {cart} />
        </div>
     )
 
@@ -26,10 +26,9 @@ export const HotCoffee = ({cart})=>{
 
 
 
-export const IceCoffee = ({cart}) => {
+export const IceCoffee = () => {
 
     const [coffeeMenu, setCoffeeMenu] = useState([]);
-
 
     useEffect(()=>{
         setCoffeeMenu(iceCoffee())
@@ -38,7 +37,6 @@ export const IceCoffee = ({cart}) => {
     return(
         <div>
             {coffeeMenu.map(iceCoffee => <DrinkMenu key={iceCoffee.menuCode} drinkMenu={iceCoffee}/>)}
-            <ShoppingCart cart= {cart} />
        </div>
     )
 }
