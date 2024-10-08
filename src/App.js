@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import IdlePage from "./IdlePage";
 import MenuDetail from "./MenuDetail";
 import ShoppingCart from "./ShoppingCart";
@@ -17,13 +17,19 @@ import { useState } from "react";
 import { Point } from "./Point";
 
 
-function App()
-{
-   const [cart, setCart] = useState([]);
+function App() {
+  const [cart, setCart] = useState([]);
 
   const addCart = (menuItem) => {
      setCart((prevMenu) => [...prevMenu, menuItem])
   }
+
+  const [extraMenu,setExtraMenu] = useState([{  //추가메뉴(샷,휘핑)
+    addOption : '',
+    price : 0
+}]);
+
+  const [totalPrice, setTotalPrice] = useState(0);
 
   return (
    <BrowserRouter>
@@ -45,9 +51,9 @@ function App()
           <Route path="newdessert" element={<NewDessert />} />
           <Route path="point" element={<Point />} />
           {/* 추가 메뉴 상세 옵션 */}
-          <Route path=":menuCode" element={<MenuDetail addCart={addCart} cart={cart} setCart={setCart} />} />
+          <Route path=":menuCode" element={<MenuDetail extraMenu={extraMenu} setExtraMenu={setExtraMenu} addCart={addCart} cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} />} />
         </Route>
-        <Route path="/shoppingcart" element={<ShoppingCart cart={cart} />} />
+        <Route path="/shoppingcart" element={<ShoppingCart cart={cart} setCart={setCart} extraMenu={extraMenu} setExtraMenu={setExtraMenu}/>} />
       </Routes>
     </BrowserRouter>
   );

@@ -77,7 +77,7 @@ export const ExtraIce = ({extraMenu, handleOptionSelect})=>{
     
     return(
         <div>
-            <h3>얼음 양(선택, 단일선택)</h3>
+            <h3>얼음 양</h3>
             <div style={{ display: 'flex', justifyContent: 'space-between'}}>
                 <div onClick={()=>handleOptionSelect('얼음 없이', 0)} 
                 style={{ border:extraMenu.addOption === '얼음 없이' ? '2px solid red' : '1px solid black', padding: 10, cursor: 'pointer' }}>
