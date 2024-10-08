@@ -138,10 +138,3 @@ export const ExtraTopping = ({extramenu = {}, handleOptionSelect})=>{
         </div>
     );
 }
-
-
-
-
-
-
-
