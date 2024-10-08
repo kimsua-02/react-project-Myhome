@@ -5,6 +5,8 @@
  * 포인트 적립 / 사용, 각종 페이, 카드 결제, 기프티콘 및 상품권 결제 버튼 구현
 */
 
+import { useState } from "react";
+
 // 뒤로 가기 -> ExtraShot.js 로 넘어감 (키오스크 결제 화면에서 다른 메뉴를 추가할 시 뒤로 가기 위함.)
 // 결제 화면 맨 상단에 " 결제수단 선택" 글자 나오게 구현
 
@@ -39,7 +41,7 @@ const Purchase = () => {
             <button onClick={handleBack}>뒤로가기</button>
             <h2>[결제수단]</h2><hr/>
 
-            <button onClick={handlePointUsage}>포인트 적립 / 사용</button>
+            <button onClick={handlePointUsage}>포인트 사용</button>
             <button onClick={handleDiscount}>할인</button>
 
             <div>

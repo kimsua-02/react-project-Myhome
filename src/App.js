@@ -17,6 +17,7 @@ import ExtraShot from "./ExtraShot";
 import ShoppingCart from "./ShoppingCart"; 
 import { UserPoint } from "./UserPoint"; 
 import { Cupon } from "./Cupon"; 
+import Purchase from "./Purchase";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -31,7 +32,6 @@ function App() {
         <Route path="/" element={<Redirect />} />
         <Route path="/idle" element={<IdlePage />} />
         <Route path="/menu" element={<Layout />}>
-
           {/* 메뉴별 라우트 설정 */}
           <Route path="hotcoffee" element={<Coffee cart={cart} />} />
           <Route path="icecoffee" element={<Coffee />} />
@@ -58,8 +58,10 @@ function App() {
         <Route path="/cupon">
           <Route index element={<Cupon />} />
         </Route>
-
+        <Route path="/purchase" element={<Purchase />}/>
+        <Route path="/result" element={<Result />}/>
       </Routes>
+      
     </BrowserRouter>
   );
 }

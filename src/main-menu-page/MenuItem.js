@@ -8,7 +8,7 @@ export const DrinkMenu = ({drinkMenu}) =>{
         
         <Link to={`/menu/${drinkMenu.menuCode}`}>
             <div className="DrinkMenuItem">
-                <img src={`/images/${drinkMenu.menuCode}.jpg`} alt={`${drinkMenu.menuName}`}/>
+                <img src={`/images/${drinkMenu.menuCode}.jpg`} alt={`${drinkMenu.menuName}`} width="50px"/>
                 <ul>{drinkMenu.menuName}</ul>
                 <ul>{drinkMenu.menuPrice}</ul>
             </div>
