@@ -18,9 +18,6 @@ const Coffee = ({cart})=>{
     return(
         <div>
             {coffeeMenu.map(coffee => <DrinkMenu key={coffee.menuCode} drinkMenu={coffee}/>)}
-            
-                    {/*장바구니 출력*/} 
-            <ShoppingCart cart= {cart} />
        </div>
     )
 

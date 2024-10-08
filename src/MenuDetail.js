@@ -1,11 +1,22 @@
 import {useParams} from "react-router-dom";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useReducer } from "react";
 import {useNavigate} from "react-router-dom";
 import { getMenuDetail } from "./main-menu-page/MenuAPI";
 import { ExtraIce, ExtraShot, ExtraSugar, ExtraTopping } from "./option/Option";
 
-const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
+// 리듀서 정의
+const cartReducer = (state, action) => {
+    switch (action.type) {
+        case "ADD_ITEM":
+            return [...state, action.payload];
+        default:
+            return state;
+    }
+};
 
+
+const MenuDetail = ({addCart, totalPrice, setTotalPrice, dispatch}) => {
+    
 
     const navigate = useNavigate();
 
@@ -44,13 +55,14 @@ const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
 
 
     const onClickHandler = () => {
-        addCart({
+        dispatch({ type: "ADD_ITEM", payload: {
             ...menu,
             extraMenu,
             finalTotalPrice
-        });
+        }});
+        navigate("/menu/shoppingcart");
     };
-    
+
     const onClickHandler2 = () => {
         navigate(`/menu/hotcoffee`);
     }
