@@ -14,7 +14,7 @@ export const Cupon = () => {
     }
   }, [cuponCode]);
 
-   const nevigate = useNavigate();
+  const nevigate = useNavigate();
 
   const handler = (e) => {
     setCuponCode(e.target.value);
@@ -23,6 +23,7 @@ export const Cupon = () => {
   const useCupon = ()=>{
     nevigate("/result");
    }
+   
   
   const back = ()=>{
     nevigate("/purchase");

@@ -13,7 +13,8 @@ import Dessert from "./main-menu-page/drink/Dessert";
 import NewDessert from "./main-menu-page/drink/New-dessert";
 import { useState } from "react";
 import { Point } from "./Point";
-import ExtraShot from "./ExtraShot"; 
+import Purchase from "./Purchase";
+import MenuDetail from "./MenuDetail"; 
 import ShoppingCart from "./ShoppingCart"; 
 import { UserPoint } from "./UserPoint"; 
 import { Cupon } from "./Cupon"; 
@@ -26,6 +27,7 @@ function App() {
     setCart((prevMenu) => [...prevMenu, menuItem]);
   };
 
+
   return (
     <BrowserRouter>
       <Routes>
@@ -33,7 +35,7 @@ function App() {
         <Route path="/idle" element={<IdlePage />} />
         <Route path="/menu" element={<Layout />}>
           {/* 메뉴별 라우트 설정 */}
-          <Route path="hotcoffee" element={<Coffee cart={cart} />} />
+          <Route path="hotcoffee" element={<Coffee cart={cart}/>} />
           <Route path="icecoffee" element={<Coffee />} />
           <Route path="hottea" element={<Tea />} />
           <Route path="icetea" element={<Tea />} />
@@ -46,24 +48,18 @@ function App() {
           <Route path="newdessert" element={<NewDessert />} />
           <Route path="point" element={<Point />} />
           {/* 추가 메뉴 상세 옵션 */}
-          <Route path=":menuCode" element={<ExtraShot addCart={addCart} />} />
-          <Route path="shoppingcart" element={<ShoppingCart cart={cart} />} />
+          <Route path=":menuCode" element={<MenuDetail addCart={addCart} />}/>
+          <Route path="shoppingcart" element={<ShoppingCart cart={cart} setCart={setCart} />} />
         </Route>
-        <Route path="/point">
-          <Route index element={<Point />} />
-        </Route>
-        <Route path="/userpoint">
-          <Route index element={<UserPoint />} />
-        </Route>
-        <Route path="/cupon">
-          <Route index element={<Cupon />} />
-        </Route>
-        <Route path="/purchase" element={<Purchase />}/>
-        <Route path="/result" element={<Result />}/>
+        <Route path="/point" element={<Point />} />
+        <Route path="/userpoint" element={<UserPoint />} />
+        <Route path="/cupon" element={<Cupon />} />
+        <Route path="/purchase" element={<Purchase />} />
       </Routes>
       
     </BrowserRouter>
   );
-}
+};
+
 
 export default App;

@@ -1,8 +1,9 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
+import drinkMenus from "./json/drink.json"
+import dessertMenus from "./json/dessert.json"
 import { getMenuDetail } from "./main-menu-page/MenuAPI";
-
 
 const ExtraShot = ({addCart}) => {
 
@@ -16,6 +17,7 @@ const ExtraShot = ({addCart}) => {
         menuPrice : 0,
         detail : {description:'', image:''}
     });
+
     const [extramenu,setExtraMenu] = useState({  //추가메뉴(샷,휘핑)
         shotOption : '',
         totalPrice : 0
@@ -48,7 +50,7 @@ const ExtraShot = ({addCart}) => {
     };
     
     const onClickHandler2 = () => {
-        navigate(`/menu/hotcoffee`);
+        navigate(`/idle`);
     }
 
     return(
@@ -66,6 +68,7 @@ const ExtraShot = ({addCart}) => {
             ) : (
                 <p>메뉴를 불러오는 중 입니다..</p>
             )}
+            <button onClick={onClickHandler}>주문담기</button><button onClick={onClickHandler2}>취소</button>
             <div>
                 <h3>농도(선택, 단일선택)</h3>
                 <div style={{ display: 'flex', justifyContent: 'space-between'}}>

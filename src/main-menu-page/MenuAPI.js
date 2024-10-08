@@ -72,7 +72,9 @@ export const newdessert = ()=>{
     return dessertMenus.filter(isNewDessert)
 }
 
+
+
 export function getMenuDetail(menuCode){
     const codeAsNumber = parseInt(menuCode);
-    return drinkMenus.find(menu => menu.menuCode === codeAsNumber);
+    return drinkMenus.filter(menu => menu.menuCode === codeAsNumber)[0];
 }
