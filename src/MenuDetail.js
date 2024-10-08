@@ -1,5 +1,5 @@
 import {useParams} from "react-router-dom";
-import {useState, useEffect, useReducer } from "react";
+import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import { drinkgetMenuDetail,dessertgetMenuDetail,mdgetMenuDetail } from "./main-menu-page/MenuAPI";
 import { ExtraIce, ExtraShot, ExtraSugar, ExtraTopping } from "./option/Option";
