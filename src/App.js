@@ -18,7 +18,6 @@ import MenuDetail from "./MenuDetail";
 import ShoppingCart from "./ShoppingCart"; 
 import { UserPoint } from "./UserPoint"; 
 import { Cupon } from "./Cupon"; 
-import Purchase from "./Purchase";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -55,6 +54,7 @@ function App() {
         <Route path="/userpoint" element={<UserPoint />} />
         <Route path="/cupon" element={<Cupon />} />
         <Route path="/purchase" element={<Purchase />} />
+        <Route path="/result" element={<Result />} />
       </Routes>
       
     </BrowserRouter>
