@@ -7,8 +7,8 @@ import { HotCoffee, IceCoffee } from "./main-menu-page/drink/Coffee";
 import { HotTea, IceTea } from "./main-menu-page/drink/Tea";
 import { HotDecaf, IceDecaf } from "./main-menu-page/drink/Decaffein";
 import NewDrinks from "./main-menu-page/drink/NewDrinks";
-import Dessert from "./main-menu-page/drink/Dessert";
-import NewDessert from "./main-menu-page/drink/NewDessert";
+import Dessert from "./main-menu-page/dessert-md/Dessert";
+import NewDessert from "./main-menu-page/dessert-md/NewDessert";
 import { useState } from "react";
 import { Point } from "./Point";
 import Purchase from "./Purchase";
@@ -19,6 +19,7 @@ import { Cupon } from "./Cupon";
 import AdeAndJuice from "./main-menu-page/drink/AdeAndJuice";
 import SmoothieAndFrappe from "./main-menu-page/drink/SmoothieAndFrappe";
 import { HotDrinks, IceDrinks } from "./main-menu-page/drink/Drinks";
+import MdProduct from "./main-menu-page/dessert-md/Md";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -48,6 +49,7 @@ function App() {
           <Route path="newdrinks" element={<NewDrinks cart={cart}/>} />
           <Route path="dessert" element={<Dessert cart={cart}/>} />
           <Route path="newdessert" element={<NewDessert cart={cart}/>} />
+          <Route path="md" element={<MdProduct cart={cart}/>} />
           <Route path="point" element={<Point cart={cart}/>} />
           {/* 추가 메뉴 상세 옵션 */}
           <Route path=":menuCode" element={<MenuDetail addCart={addCart} />}/>

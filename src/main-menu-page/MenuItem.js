@@ -31,3 +31,18 @@ export const DessertMenu = ({dessertMenu}) =>{
         </Link>
     )
 }
+
+
+// Md
+export const MdItem = ({mdProduct}) =>{
+
+    return(
+        <Link to={`/menu/${mdProduct.menuCode}`}>
+            <div className="mdProduct">
+            <img src={`/images/${mdProduct.menuCode}.jpg`} alt={`${mdProduct.menuName}`} width="100px"/>
+                <h4>{mdProduct.menuName}</h4>
+                <ul>{mdProduct.menuPrice}원</ul>
+            </div>
+        </Link>
+    )
+}

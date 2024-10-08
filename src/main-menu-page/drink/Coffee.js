@@ -30,7 +30,6 @@ export const IceCoffee = ({cart}) => {
 
     const [coffeeMenu, setCoffeeMenu] = useState([]);
 
-
     useEffect(()=>{
         setCoffeeMenu(iceCoffee())
     },[]);
