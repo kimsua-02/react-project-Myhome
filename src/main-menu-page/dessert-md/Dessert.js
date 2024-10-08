@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { dessert } from "../MenuAPI";
-import { DrinkMenu } from "../MenuItem";
+import { DessertMenu } from "../MenuItem";
+import ShoppingCart from "../../ShoppingCart";
 
 
 
-const Dessert = ()=>{
-
+const Dessert = ({cart})=>{
 
     const [dessertMenu, setDessertMenu] = useState([]);
-
 
     useEffect(()=>{
         setDessertMenu(dessert())
@@ -16,7 +15,8 @@ const Dessert = ()=>{
 
     return(
         <div>
-            {dessertMenu.map(dessert => <DrinkMenu key={dessert.menuCode} drinkMenu={dessert}/>)}
+            {dessertMenu.map(dessert => <DessertMenu key={dessert.menuCode} dessertMenu={dessert}/>)}
+            <ShoppingCart cart= {cart} />
         </div>
     )
 
