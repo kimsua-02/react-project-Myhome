@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { newdessert } from "../MenuAPI";
+import { newDessert } from "../MenuAPI";
 import { DrinkMenu } from "../MenuItem";
 
 
@@ -11,7 +11,7 @@ const NewDessert = ()=>{
 
 
     useEffect(()=>{
-        setNewDessertMenu(newdessert())
+        setNewDessertMenu(newDessert())
     },[]);
 
     return(

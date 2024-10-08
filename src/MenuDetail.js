@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 import { getMenuDetail } from "./main-menu-page/MenuAPI";
 import { ExtraIce, ExtraShot, ExtraSugar, ExtraTopping } from "./option/Option";
 
-const MenuDetail = ({addCart, totalPrice, setTotalPrice, extraMenu, setExtraMenu}) => {
+const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
 
 
     const navigate = useNavigate();
@@ -17,10 +17,8 @@ const MenuDetail = ({addCart, totalPrice, setTotalPrice, extraMenu, setExtraMenu
         detail : {description:'', image:''}
     });
 
-    // const [extraMenu,setExtraMenu] = useState([{  //추가메뉴(샷,휘핑)
-    //     addOption : '',
-    //     price : 0
-    // }]);
+    const [extraMenu,setExtraMenu] = useState([  //추가메뉴(샷,휘핑)
+    ]);
 
 
 
@@ -34,39 +32,27 @@ const MenuDetail = ({addCart, totalPrice, setTotalPrice, extraMenu, setExtraMenu
 
 
     const handleOptionSelect = (option, price) => {
-        setExtraMenu(([
-            ...extraMenu,
-            {
-            addOption: option,
-            price: price
-            }
-        ]));
-        setTotalPrice(prevTotalPrice => prevTotalPrice + price)
+        setExtraMenu((prevExtraMenu) => [
+            ...prevExtraMenu,
+           {option,price}
+        ]);             
     };
-
-    const options= extraMenu.map(option => 
-        (
-            <>
-                <li>{option.option}</li>
-                <li>{option.price}</li>
-            </>
-
-        )
-    )
     
+    // 총 옵션 가격 계산
+    const totalExtraPrice = extraMenu.reduce((acc, item) => acc + item.price, 0);
+    const finalTotalPrice = menu.menuPrice + totalExtraPrice;
+
+
     const onClickHandler = () => {
         addCart({
             ...menu,
-            extraMenu
+            extraMenu,
+            finalTotalPrice
         });
-        return {options}
     };
-
-
-
     
     const onClickHandler2 = () => {
-        navigate(`/idle`);
+        navigate(`/menu/hotcoffee`);
     }
 
     return(
@@ -84,12 +70,11 @@ const MenuDetail = ({addCart, totalPrice, setTotalPrice, extraMenu, setExtraMenu
             ) : (
                 <p>메뉴를 불러오는 중 입니다..</p>
             )}
-            <button onClick={onClickHandler}>주문담기</button><button onClick={onClickHandler2}>취소</button>
             {<ExtraShot extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
             {<ExtraSugar extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
             {<ExtraIce extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
             {<ExtraTopping extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
-            <h3>총 가격: {totalPrice+menu.menuPrice}원</h3>
+            <h3>총 가격: {finalTotalPrice}원</h3>
             <button onClick={onClickHandler}>주문담기</button>
             <button onClick={onClickHandler2}>취소</button>
         </>
