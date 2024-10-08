@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
-import { newdrinks } from "../MenuAPI";
+import { newDrinks } from "../MenuAPI";
 import { DrinkMenu } from "../MenuItem";
+import ShoppingCart from "../../ShoppingCart";
 
 
 
-const NewDrinks = ()=>{
+const NewDrinks = ({cart})=>{
 
 
     const [newDrinksMenu, setNewDrinksMenu] = useState([]);
 
 
     useEffect(()=>{
-        setNewDrinksMenu(newdrinks())
+        setNewDrinksMenu(newDrinks())
     },[]);
 
     return(
         <div>
             {newDrinksMenu.map(newDrinks => <DrinkMenu key={newDrinks.menuCode} drinkMenu={newDrinks}/>)}
+            <ShoppingCart cart= {cart} />
         </div>
     )
 
